@@ -2,3 +2,4 @@ seaborn
 Ipython
 geopandas
 plotly
+cufflinks
