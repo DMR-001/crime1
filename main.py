@@ -46,10 +46,10 @@ def add_bg_from_local(image_file):
     unsafe_allow_html=True
     )
 add_bg_from_local('./bg.jpg')
-victims = pd.read_csv('C:/Users/mukte/OneDrive/Desktop/CRIMEANALYSIS/crime/20_Victims_of_rape.csv')
-police_hr = pd.read_csv('C:/Users/mukte/OneDrive/Desktop/CRIMEANALYSIS/crime/35_Human_rights_violation_by_police.csv')
-auto_theft = pd.read_csv('C:/Users/mukte/OneDrive/Desktop/CRIMEANALYSIS/crime/30_Auto_theft.csv')
-prop_theft = pd.read_csv('C:/Users/mukte/OneDrive/Desktop/CRIMEANALYSIS/crime/10_Property_stolen_and_recovered.csv')
+victims = pd.read_csv('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/20_Victims_of_rape.csv')
+police_hr = pd.read_csv('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/35_Human_rights_violation_by_police.csv')
+auto_theft = pd.read_csv('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/30_Auto_theft.csv')
+prop_theft = pd.read_csv('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/10_Property_stolen_and_recovered.csv')
 
 st.title("CRIME ANALYSIS")
 st.write('What kind of info you are looking for')
@@ -89,7 +89,7 @@ for item in my_list:
         g1.replace(to_replace='Arunachal Pradesh',value='Arunanchal Pradesh',inplace=True)
         st.write(g1)
         g1.columns=['State/UT','Cases Reported']
-        shp_gdf = gpd.read_file('C:/Users/mukte/OneDrive/Desktop/CRIMEANALYSIS/map/India States/Indian_states.shp')
+        shp_gdf = gpd.read_file('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/map/India States/Indian_states.shp')
         merge =shp_gdf.set_index('st_nm').join(g1.set_index('State/UT'))
         fig,ax=plt.subplots(1, figsize=(10,10))
 
@@ -151,7 +151,7 @@ for item in my_list:
         colormaps = ['RdPu', 'viridis', 'coolwarm', 'Blues', 'Greens', 'Reds', 'PuOr', 'inferno', 'magma', 'cividis', 'cool', 'hot', 'YlOrRd', 'YlGnBu']
 
         random_cmap = random.choice(colormaps)
-        shp_gdf = gpd.read_file('C:/Users/mukte/OneDrive/Desktop/CRIMEANALYSIS/map/India States/Indian_states.shp')
+        shp_gdf = gpd.read_file('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/map/India States/Indian_states.shp')
         merged = shp_gdf.set_index('st_nm').join(g2.set_index('State/UT'))
         st.write(shp_gdf)
         fig, ax = plt.subplots(1, figsize=(10, 10))
@@ -165,7 +165,7 @@ for item in my_list:
         st.header('Penalties')
         st.write(penalties.get(item))
     elif item =='property' or item =='property stolen' or item =='stolen'or item =='Burglary':
-        df = pd.read_csv('C:/Users/mukte/OneDrive/Desktop/CRIMEANALYSIS/crime/10_Property_stolen_and_recovered.csv')
+        df = pd.read_csv('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/10_Property_stolen_and_recovered.csv')
         stats = df.describe()
         st.write(stats)
         plt.bar(['Recovered', 'Stolen'], [df['Cases_Property_Recovered'][0], df['Cases_Property_Stolen'][0]])
@@ -231,7 +231,7 @@ for item in my_list:
         g5.columns = ['State/UT','Vehicle_Stolen']
         g5.replace(to_replace='Arunachal Pradesh',value='Arunanchal Pradesh',inplace=True)
 
-        shp_gdf = gpd.read_file('C:/Users/mukte/OneDrive/Desktop/CRIMEANALYSIS/map/India States/Indian_states.shp')
+        shp_gdf = gpd.read_file('C:/Users/mukte/Documents/GitHub/crime1/map/India States/Indian_states.shp')
         merged = shp_gdf.set_index('st_nm').join(g5.set_index('State/UT'))
 
         fig, ax = plt.subplots(1, figsize=(10, 10))
@@ -279,7 +279,7 @@ for item in my_list:
                     orientation='h',color_discrete_sequence=["red"])
         st.plotly_chart(fig)
     elif item=='murder' or item=='killer' or item=='death' or item=='homicide' or item=='fatalities':
-        murder = pd.read_csv("C:/Users/mukte/OneDrive/Desktop/CRIMEANALYSIS/crime/32_Murder_victim_age_sex.csv")
+        murder = pd.read_csv("C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/32_Murder_victim_age_sex.csv")
         st.write(murder.Year.unique())
         murder.Area_Name.unique()
         murder.Sub_Group_Name.unique()
@@ -365,7 +365,7 @@ for item in my_list:
         # murderst = pd.concat([murderst, new_row], ignore_index=True)
         # murderst.sort_values('Area_Name')
         # import geopandas as gpd
-        # gdf = gpd.read_file('C:/Users/mukte/OneDrive/Desktop/CRIMEANALYSIS/map/India States/Indian_states.shp')
+        # gdf = gpd.read_file('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/map/India States/Indian_states.shp')
         # murderst.at[17, 'Area_Name'] = 'NCT of Delhi'
         # merged = gdf.merge(murderst, left_on='st_nm', right_on='Area_Name')
         # merged.drop(['Area_Name'], axis=1)
