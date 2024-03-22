@@ -97,7 +97,7 @@ for item in my_list:
         g1.columns=['State/UT','Cases Reported']
         import geopandas as gpd
         url6 = 'https://raw.githubusercontent.com/DMR-001/crime1/main/map/India States/Indian_states.shp'
-        shp_gdf = gpd.read_csv(url6)
+        shp_gdf = gpd.read_file(url6)
         merge =shp_gdf.set_index('st_nm').join(g1.set_index('State/UT'))
         fig,ax=plt.subplots(1, figsize=(10,10))
 
