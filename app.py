@@ -38,8 +38,7 @@ def main():
     if login_button:
         if check_credentials(login_username, login_password):
             st.success("Login Successful!")
-            import os
-            os.system('streamlit run main.py')
+            st.markdown("[Open Crime Dashboard](https://crime1-main-dmr-anil-badri.streamlit.app/)")
         else:
             st.error("Invalid Username or Password")
 
