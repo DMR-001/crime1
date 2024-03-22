@@ -49,9 +49,13 @@ add_bg_from_local('./bg.jpg')
 import pandas as pd
 url = 'https://raw.githubusercontent.com/DMR-001/crime1/main/crime/20_Victims_of_rape.csv'
 victims = pd.read_csv(url)
-police_hr = pd.read_csv('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/35_Human_rights_violation_by_police.csv')
-auto_theft = pd.read_csv('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/30_Auto_theft.csv')
-prop_theft = pd.read_csv('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/10_Property_stolen_and_recovered.csv')
+url1 = 'https://raw.githubusercontent.com/DMR-001/crime1/main/crime/35_Human_rights_violation_by_police.csv'
+police_hr = pd.read_csv(url1)
+url2 = 'https://raw.githubusercontent.com/DMR-001/crime1/main/crime/30_Auto_theft.csv'
+auto_theft = pd.read_csv(url2)
+url3 = 'https://raw.githubusercontent.com/DMR-001/crime1/main/crime/10_Property_stolen_and_recovered.csv'
+prop_theft = pd.read_csv(url3)
+
 
 st.title("CRIME ANALYSIS")
 st.write('What kind of info you are looking for')
