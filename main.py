@@ -286,7 +286,7 @@ for item in my_list:
         st.plotly_chart(fig)
     elif item=='murder' or item=='killer' or item=='death' or item=='homicide' or item=='fatalities':
         url5 = 'https://raw.githubusercontent.com/DMR-001/crime1/main/crime/32_Murder_victim_age_sex.csv'
-         murder = pd.read_csv(url5)
+        murder = pd.read_csv(url5)
             st.write(murder.Year.unique())
         murder.Area_Name.unique()
         murder.Sub_Group_Name.unique()
