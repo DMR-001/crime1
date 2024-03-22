@@ -95,7 +95,9 @@ for item in my_list:
         g1.replace(to_replace='Arunachal Pradesh',value='Arunanchal Pradesh',inplace=True)
         st.write(g1)
         g1.columns=['State/UT','Cases Reported']
-        shp_gdf = gpd.read_file('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/map/India States/Indian_states.shp')
+        import panda as pd
+        url6 = 'https://raw.githubusercontent.com/DMR-001/crime1/main/map/India States/Indian_states.shp'
+        shp_gdf = gpd.read_csv(url6)
         merge =shp_gdf.set_index('st_nm').join(g1.set_index('State/UT'))
         fig,ax=plt.subplots(1, figsize=(10,10))
 
