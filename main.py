@@ -46,7 +46,8 @@ def add_bg_from_local(image_file):
     unsafe_allow_html=True
     )
 add_bg_from_local('./bg.jpg')
-victims = pd.read_csv('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/20_Victims_of_rape.csv')
+url = 'https://github.com/DMR-001/crime1/blob/main/crime/10_Property_stolen_and_recovered.csv'
+victims = pd.read_csv(url)
 police_hr = pd.read_csv('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/35_Human_rights_violation_by_police.csv')
 auto_theft = pd.read_csv('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/30_Auto_theft.csv')
 prop_theft = pd.read_csv('C:/Users/mukte/OneDrive/Documents/GitHub/crime1/crime/10_Property_stolen_and_recovered.csv')
