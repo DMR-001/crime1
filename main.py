@@ -96,8 +96,12 @@ for item in my_list:
         st.write(g1)
         g1.columns=['State/UT','Cases Reported']
         import geopandas as gpd
+        from urllib.parse import quote
+
         url6 = 'https://raw.githubusercontent.com/DMR-001/crime1/main/map/India States/Indian_states.shp'
-        shp_gdf = gpd.read_file(url6)
+        encoded_url = quote(url6, safe=':/')
+        shp_gdf = gpd.read_file(encoded_url)
+
         merge =shp_gdf.set_index('st_nm').join(g1.set_index('State/UT'))
         fig,ax=plt.subplots(1, figsize=(10,10))
 
