@@ -3,4 +3,4 @@ Ipython
 geopandas
 plotly
 cufflinks
-sklearn
+scikit-learn
